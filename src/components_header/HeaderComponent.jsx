@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import "./HeaderComponent.css";
+import headerStyle from "./HeaderComponent.module.css";
+
 import MyPageIcon from "/user.svg";
 import LikeIcon from "/vector-15.svg";
 import ChatIcon from "/chat_alt_2_light.svg";
@@ -41,25 +42,25 @@ const HeaderComponent = () => {
 
 
   return (
-    <header className="header">
-      <div className="left">
-        <div className="main-title" onClick={handleToMainPage}>RenewWear</div>
+    <header className={headerStyle.header}>
+      <div className={headerStyle.left}>
+        <div className={headerStyle.main_title} onClick={handleToMainPage}>RenewWear</div>
       </div>
-      <div className="right">
-        <div className="menu-button" onClick={handleToSalesPage}>판매하기</div>
-        <div className="menu-button" onClick={handleToMyPage}>
-          <img src={MyPageIcon} alt="MyPageIcon"/>
+      <div className={headerStyle.right}>
+        <div className={headerStyle.menu_button} onClick={handleToSalesPage}>판매하기</div>
+        <div className={headerStyle.menu_button} onClick={handleToMyPage}>
+          <img className={headerStyle.icon} src={MyPageIcon} alt="MyPageIcon"/>
           마이페이지
         </div>
-        <div className="menu-button" onClick={handleToLike}>
-          <img src={LikeIcon} alt="LikeIcon"/>
+        <div className={headerStyle.menu_button} onClick={handleToLike}>
+          <img className={headerStyle.icon} src={LikeIcon} alt="LikeIcon"/>
           찜한 목록
         </div>
-        <div className="menu-button" onClick={handleToChatPage}>
-          <img src={ChatIcon} alt="ChatIcon"/>
+        <div className={headerStyle.menu_button} onClick={handleToChatPage}>
+          <img className={headerStyle.icon} src={ChatIcon} alt="ChatIcon"/>
           채팅
         </div>
-        <div className="menu-button" onClick={handleClickLogout}>로그아웃</div>
+        <div className={headerStyle.menu_button} onClick={handleClickLogout}>로그아웃</div>
       </div>
     </header>
   );
