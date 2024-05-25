@@ -6,16 +6,21 @@
   
 }
 .groupChild {
-  top: 0;
+  margin-top: -97px;
   left: 0;
   background-color: var(--color-gainsboro);
   width: 113px;
   height: 110px;
 }
+.groupChild:hover {
+  transform: scale(1.1); /* 이미지를 1.1배 확대합니다. */
+  transition: transform 0.3s ease; /* 변환을 부드럽게 만듭니다. */
+}
 .b,
 .div {
   position: relative;
-  top: 0;
+  margin-top: 15px;
+  margin-left: 20px;
   left: 133px;
 }
 .div {
@@ -26,11 +31,10 @@
 
 .textParent {
   position: relative;
-  margin-top: 60px;
-  margin-left: 40px; /* 왼쪽에서 200px 떨어짐 */
-  
-  width: auto; /* 너비를 자동으로 설정하거나, % 단위로 설정할 수 있음 */
-  
+
+  margin-left: 30px;
+  margin-top: 10px;
+  width: auto;
   height: 110px;
   text-align: left;
   font-size: var(--font-size-lg);
@@ -40,5 +44,16 @@
   border-bottom: solid;
   margin-bottom: 20px;
   border-color: lightgray;
-  border-color: lightgray;
+}
+
+.status {
+  position: absolute;
+  top: 45px;
+  left: 1000px;
+}
+
+.date {
+  position: absolute;
+  top: 45px;
+  left: 530px;
 }

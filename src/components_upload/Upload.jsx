@@ -7,7 +7,7 @@ import "./Upload.css";
 const Upload = () => {
   return (
     <div>
-      <HeaderComponent />
+      <HeaderComponent/>
       <br></br>
       <br></br>
       <br></br>

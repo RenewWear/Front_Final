@@ -1,9 +1,9 @@
 .title {
   font-size: 25px;
-  margin-left: 20px;
-  margin-top: 20px;
-  color:black;
-  font-weight: bold;
+    margin-left: 20px;
+    margin-top: 20px;
+    color:black;
+    font-weight: bold;
 }
 
 .container {
@@ -12,6 +12,7 @@
 }
 
 .menu-container {
+  margin-top: 500px;
   border-top: 2px solid #000; /* 위쪽 선 */
   border-bottom: 2px solid #000; /* 아래쪽 선 */
   padding: 10px 0; /* 선과 메뉴 아이템 사이의 간격 */

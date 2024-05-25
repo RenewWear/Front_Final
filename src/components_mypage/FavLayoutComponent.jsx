@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import "./FavLayoutComponent.module.css";
 import PostFavorite from "./PostFavorite";
-
+import styles from "./FavLayoutComponent.module.css"
 
 const FavLayoutComponent = ({ user_id }) => {
 
@@ -20,22 +19,22 @@ const FavLayoutComponent = ({ user_id }) => {
     // }, [user_id]);
 
     const mockPostdetails = [
-      { title: '뉴발란스996',  price: 10000, user_id: 3, post_id: 3, liked_id: 5, image_url: null},
-      { title: 'ㅁㄴㅇ', price: 10000, user_id: 3, post_id: 3 , liked_id: 5, image_url: null}, 
-      { title: 'ㄴㅇ', price: 10000, user_id: 3, post_id: 3 , liked_id: 5, image_url: null},
-      { title: 'ㄴㅇ', price: 10000, user_id: 3, post_id: 3 , liked_id: 5, image_url: null}  
-    ];
+      { title: '뉴발란스996',  price: 10000, created_at: '2024-05-24', status: '판매 중', user_id: 3, post_id: 3, liked_id: 5, image_url: null},
+    { title: 'ㅁㄴㅇ', price: 10000, created_at: '2024-05-25', status: '판매 중', user_id: 3, post_id: 3 , liked_id: 5, image_url: null}, 
+    { title: 'ㄴㅇ', price: 10000, created_at: '2024-05-26', status: '판매 중', user_id: 3, post_id: 3 , liked_id: 5, image_url: null},
+    { title: 'ㄴㅇ', price: 10000, created_at: '2024-05-26', status: '판매 중', user_id: 3, post_id: 3 , liked_id: 5, image_url: null}  
+  ];
 
     setPostDetails(mockPostdetails);
   }, [user_id]);
 
   const handleClick = (image_url) => {
-    alert("post로 이동합니다, image_url")
+    alert("post로 이동합니다", image_url);
   };
   return (
     <div>
-        <div className="title">목록!!</div>
-        <div className="container">
+        <div className={styles.title}>찜 목록</div>
+        <div className={styles.container}>
             <div className="menu-container">
                 <div className="menu-item">정보</div>
                 <div className="menu-item">게시 날짜</div>
@@ -47,6 +46,8 @@ const FavLayoutComponent = ({ user_id }) => {
                   key={index}
                   price={fav.price}
                   title={fav.title}
+                  status={fav.status}
+                  created_at={fav.created_at}
                   onClick={()=>handleClick(fav.image_url)}
                 />
                 ))}
