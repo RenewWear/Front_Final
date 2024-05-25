@@ -1,0 +1,68 @@
+.groupChild,
+.text {
+  position: absolute;
+  top: 86px;
+  left: 30px;
+}
+.groupChild {
+  top: 0;
+  left: 0;
+  background-color: var(--color-gainsboro);
+  width: 113px;
+  height: 110px;
+}
+.groupChild:hover {
+  transform: scale(1.1); /* 이미지를 1.1배 확대합니다. */
+  transition: transform 0.3s ease; /* 변환을 부드럽게 만듭니다. */
+}
+.bMy,
+.divMy {
+  position: relative;
+  top: 0;
+  left: 133px;
+}
+.divMy {
+  top: 25px;
+  left: 134px;
+  font-size: var(--font-size-base);
+}
+
+.textParent {
+  position: relative;
+
+  margin-left: 20px;
+  margin-top: 10px;
+  width: auto;
+  height: 110px;
+  text-align: left;
+  font-size: var(--font-size-lg);
+  color: var(--color-black);
+  font-family: var(--font-inter);
+  padding-bottom: 30px;
+  border-bottom: solid;
+  margin-bottom: 20px;
+  border-color: lightgray;
+}
+
+.staTus {
+  position: absolute;
+  top: 45px;
+  left: 970px;
+}
+
+.daTe {
+  position: absolute;
+  top: 45px;
+  left: 500px;
+}
+
+.deleTe {
+  position: absolute;
+  top: 80px;
+  right: 100px;
+}
+.corrEct {
+  position: absolute;
+  top: 80px;
+  right: 150px;
+}

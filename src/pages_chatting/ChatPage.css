@@ -1,0 +1,59 @@
+/* ChatPage.css */
+
+.messages {
+    height: 500px;
+    width: 86%;
+    overflow-y: auto;
+    margin-bottom: 10px;
+    padding: 5px;
+  }
+  
+  .message {
+    background-color: #f3f3f3; /* 메시지 배경색 */
+    border-radius: 30px; /* 모서리를 약간 둥글게 */
+    padding: 8px 12px; /* 내부 패딩 */
+    margin: 4px 0; /* 메시지 사이의 마진 */
+    max-width: 70%; /*메시지 최대 너비 */
+    width: fit-content;
+    word-wrap: break-word; /* 긴 단어가 있을 경우 줄바꿈 */
+  }
+  
+  .outgoing {
+    background-color: #1CCD8D; /* 사용자 메시지 배경색 */
+    color: white; /* 텍스트 색상 */
+    margin-left: auto; /* 왼쪽 마진 자동으로 설정하여 오른쪽 정렬 */
+  }
+  
+  .incoming {
+    background-color: #E8E8E8; /* 상대방 메시지 배경색 */
+    color: black; /* 텍스트 색상 */
+    margin-right: auto; /* 오른쪽 마진 자동으로 설정하여 왼쪽 정렬 */
+  }
+  
+  .message-input {
+    height: 2.5vh;
+    padding: 10px;
+    margin-right: 10px;
+    border: 1px solid #ddd;
+    background-color: #f3f3f3;
+    border-radius: 20px;
+  }
+  
+  .send-button {
+    background-image: url('/send_button.svg');
+    width: 44px;
+    background-repeat: no-repeat;
+    background-color: var(--color-mediumseagreen);
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+  }
+
+  .chat-header {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  
+  

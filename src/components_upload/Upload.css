@@ -1,0 +1,45 @@
+
+.uploadPageDivided {
+  flex: 1;
+  flex-direction: column;
+  gap: 47px;
+  max-width: 100%;
+}
+.uploadPageWrapper,
+.uploadPageDivided,
+.uploadPage {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.uploadPage {
+  width: 1808px;
+  flex-direction: row;
+  padding: 0 58px;
+  box-sizing: border-box;
+  max-width: 100%;
+}
+.uploadPageWrapper {
+  width: 100%;
+  position: relative;
+  background-color: var(--main-white);
+  flex-direction: column;
+  gap: var(--gap-7xl);
+  line-height: normal;
+  letter-spacing: normal;
+}
+
+
+@media screen and (max-width: 1300px) {
+  .uploadPage {
+    padding-left: var(--padding-10xl);
+    padding-right: var(--padding-10xl);
+    box-sizing: border-box;
+  }
+}
+@media screen and (max-width: 800px) {
+  .uploadPageDivided {
+    gap: var(--gap-4xl);
+  }
+}
+  

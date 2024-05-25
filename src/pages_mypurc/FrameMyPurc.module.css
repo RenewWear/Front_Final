@@ -1,0 +1,233 @@
+.child {
+  top: 0;
+  left: -4px;
+  background-color: var(--color-seashell-100);
+  width: 1924px;
+  height: 113px;
+}
+.child,
+.icon,
+.item {
+  position: absolute;
+}
+.item {
+  top: 113px;
+  left: 0;
+  background-color: var(--color-seashell-100);
+  width: 266px;
+  height: 897px;
+}
+.icon {
+  top: 230px;
+  left: 73px;
+  width: 121px;
+  height: 121px;
+  object-fit: contain;
+}
+.aaaa1 {
+  font-weight: 600;
+}
+.aaaa,
+.div1 {
+  position: absolute;
+}
+.aaaa {
+  top: 365px;
+  left: 94px;
+  font-size: 24px;
+}
+.div1 {
+  top: 440px;
+}
+.div1,
+.div2,
+.div3 {
+  left: 101px;
+  font-size: var(--font-size-base);
+}
+.div2 {
+  position: absolute;
+  top: 503px;
+}
+.div3 {
+  top: 566px;
+}
+.div3,
+.div5,
+.myPage {
+  position: absolute;
+}
+.myPage {
+  top: 164px;
+  left: 71px;
+  font-size: 30px;
+  font-weight: 600;
+  color: var(--color-mediumseagreen);
+}
+.div5 {
+  top: 24px;
+  left: 102px;
+}
+.div4,
+.div6 {
+  font-family: var(--font-inter);
+}
+.div4 {
+  position: absolute;
+  top: 1014px;
+  left: 1px;
+  width: 267px;
+  height: 66px;
+  font-size: var(--font-size-base);
+}
+.div6 {
+  top: 197px;
+  left: 340px;
+  font-size: 25px;
+  font-weight: 600;
+}
+.div6,
+.inner,
+.top {
+  position: absolute;
+}
+.inner {
+  top: 242.5px;
+  left: 330.5px;
+  border-top: 1px solid var(--color-black);
+  box-sizing: border-box;
+  width: 1497px;
+  height: 1px;
+}
+.top {
+  height: 4.44%;
+  width: 12.4%;
+  top: 3.61%;
+  right: 73.02%;
+  bottom: 91.94%;
+  left: 14.58%;
+  font-size: var(--font-size-17xl);
+  color: var(--color-mediumseagreen);
+}
+.text,
+.text1 {
+  position: absolute;
+  top: 341px;
+  left: 820px;
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  font-family: var(--font-inter);
+}
+.text1 {
+  top: 495px;
+}
+.userIcon {
+  width: 24px;
+  position: relative;
+  height: 24px;
+}
+.account {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--gap-5xs);
+}
+.bagAltIcon {
+  width: 24px;
+  position: relative;
+  height: 24px;
+  display: none;
+}
+.shoping {
+  position: relative;
+  line-height: 24px;
+}
+.shopaccount,
+.shopping {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.shopping {
+  justify-content: center;
+  gap: var(--gap-5xs);
+}
+.shopaccount {
+  position: absolute;
+  top: 36px;
+  left: 1415px;
+  justify-content: flex-start;
+  gap: 24px;
+  color: var(--color-text-text);
+}
+.favoriteChild {
+  position: absolute;
+  height: 83.33%;
+  width: 91.67%;
+  top: 4.17%;
+  right: 4.17%;
+  bottom: 12.5%;
+  left: 4.17%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.div7 {
+  position: absolute;
+  top: 1px;
+  left: 30px;
+  line-height: 24px;
+  display: inline-block;
+  width: 74px;
+  height: 16px;
+}
+.chatAlt2LightIcon,
+.div10,
+.div8,
+.div9,
+.favorite {
+  position: absolute;
+  top: 35px;
+  left: 1530px;
+  width: 24px;
+  height: 24px;
+}
+.chatAlt2LightIcon,
+.div10,
+.div8,
+.div9 {
+  top: 0;
+  left: 0;
+}
+.div10,
+.div8,
+.div9 {
+  top: 35px;
+  left: 1634px;
+  width: 79px;
+}
+.div10,
+.div9 {
+  top: 34px;
+  left: 1753px;
+  width: 103px;
+  font-family: var(--font-inter);
+}
+.div10 {
+  top: 39px;
+  left: 1342px;
+  width: 81px;
+  height: 18px;
+}
+.div {
+  width: 100%;
+  position: relative;
+  background-color: #fff;
+  height: 1080px;
+  overflow: hidden;
+  text-align: left;
+  font-size: var(--body-texts-text-6-size);
+  color: var(--color-black);
+  font-family: var(--body-texts-text-6);
+}

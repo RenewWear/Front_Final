@@ -1,0 +1,12 @@
+/* FrameMySell.module.css */
+.contentContainer {
+  display: flex;
+}
+
+.myPageMenuComponent {
+  flex: 1; /* 두 컴포넌트가 같은 비율로 화면을 차지하도록 설정 */
+}
+
+.purchaseLayoutComponent{
+  flex:5;
+}

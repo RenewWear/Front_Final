@@ -1,0 +1,62 @@
+.chat-container {
+    display: flex;
+    justify-content: space-between; /* 채팅 목록과 상세 내용을 양 끝으로 정렬 */
+    margin: 20px; /* 컨테이너 외부 여백 */
+  }
+  
+  .chat-list-container {
+    flex: 1; /* 채팅 목록이 차지하는 공간을 조정 */
+    max-width: 300px; /* 채팅 목록의 최대 너비 설정 */
+    margin-right: 20px; /* 채팅 목록과 상세 내용 사이의 여백 */
+    border-right: 1px solid #ccc; /* 오른쪽에 세로 선 추가 */
+    padding-right: 20px; /* 선과 내용 사이의 여백 */
+    height: 100vh;
+  }
+
+  .chat-list {
+    list-style: none; /* 리스트 스타일 제거 */
+    padding: 0; /* 기본 패딩 제거 */
+    margin: 0; /* 기본 마진 제거 */
+    overflow-y: auto; /* 목록이 넘칠 경우 스크롤 가능 */
+  }
+  
+  .chat-list-item {
+    padding: 10px;
+    height: 5vh;
+    cursor: pointer; 
+  }
+
+  .chat-list-item:hover{
+    background-color: #f0f0f0;
+  }
+  
+  .chat-info {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .chat-partner {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  .last-message {
+    font-size: 17px;
+    color: #888;
+    margin-top: 4px;
+  }
+  
+  .chatlist-header {
+    text-align: left; /* 텍스트 정렬 */
+    font-size: 24px; /* 폰트 크기 */
+    color: #000; /* 텍스트 색상 */
+    margin-bottom: 20px; 
+  }
+  
+  .chat-detail {
+    flex: 3; /* 선택된 채팅이 화면의 오른쪽 부분을 차지하도록 함 */
+  }
+  
+  .selected-chat-item {
+    background-color: #f0f0f0; /* 선택된 항목의 배경색 */
+  }
