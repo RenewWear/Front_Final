@@ -3,6 +3,7 @@ import "./LowerSell.css";
 const LowerSell = () => {
   return (
     <div className="frame-wrapper3">
+  
       <div className="line-parent">
         <div className="line-div" />
         <div className="frame-wrapper4">
@@ -11,16 +12,9 @@ const LowerSell = () => {
               <div className="frame-parent4">
                 <div className="line-group">
                   <div className="frame-child1" />
+                  
                   <b className="b11">상품정보</b>
-                </div>
-                <div className="wrapper6">
-                  <div className="div6">
-                    <span className="txt">
-                      <p className="product-information">
-                        hi 헬ㄹ우 월드
-                      </p>
-                    </span>
-                  </div>
+                  
                 </div>
                 <div className="frame-wrapper6">
                   <div className="line-container">
@@ -38,7 +32,7 @@ const LowerSell = () => {
                         <div className="wrapper8">
                           <b className="b14">배송비</b>
                         </div>
-                        <b className="delivery-fee">직거래 or 무료배송 (0원)</b>
+                        <b className="deliveryFee">직거래</b>
                       </div>
                       <div className="frame-wrapper8">
                         <div className="frame-parent8">
@@ -54,9 +48,23 @@ const LowerSell = () => {
                     </div>
                   </div>
                 </div>
+                <div className="wrapper6">
+                  
+                  <div className="div6">
+                    <span className="txt">
+                      <p className="product-information">
+                        ㄴㅇㄹㄴㅁㄴㅇㄹㅁㄴㅇㄹㅁㄴㅇㄹㅁㄴㅇㄹㅁㄴㅇ
+                        ㄴㅁㅇㄹㅁㄴㅇㄴㅁㅇㄹㅁㄴㅇㄹㅁㄴㅇㄹㅁㄴ
+                        ㅇㄹㄴㅁㅇㄹㅁㄴㅇㄹㅁㄴㅇㄹㄴㅁㅇㄹㄴㅁㅇㄹㄴㅁ어ㅘㄹㄴㅁㅎㅇ러ㅘㄴㅁㅇㅎ라ㅓㅗㄴㄹ히ㅗㅓㅏㄴㅇ롸ㅓ모하ㅓㅣㅇㄴㅎㄴㅇ
+                        ㅎㅁㄴㅇ하ㅣ며노리ㅏㅁㄴ호라ㅣㅁㄴㅇ홈니ㅏ호ㅕㅑㅇㄹㅁㄴㅇㄹㅁㄴㅇㄹㅁㅇㄴㄹㅁㅇㄴㄹㅁㄴㅇㅇㄹㅁㄴㅇㅇㄹㅁㄴㅇㅇㄹ
+                      </p>
+                    </span>
+                  </div>
+                  <div className="vertical-line"></div> 
+                </div>
+              
               </div>
             </div>
-            <img className="line-icon" loading="lazy" alt="" />
           </div>
         </div>
       </div>

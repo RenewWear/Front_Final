@@ -12,7 +12,7 @@ const FrameMyFav = () => {
           <MyPageMenuComponent/>  {/* 사이드 메뉴 */}
         </div>
         <div className={style.favLayoutComponent}>
-          <FavLayoutComponent/> {/* 판매 레이아웃 */}
+          <FavLayoutComponent user_id={3}/> {/* 판매 레이아웃 */}
         </div>
       </div>
     </div>

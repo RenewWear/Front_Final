@@ -6,6 +6,14 @@
   background-color: var(--color-seashell);
   border: 1px solid var(--color-silver);
 }
+.double-line {
+  border-top: 1px solid rgba(41, 41, 41, 0.204); /* 첫 번째 실선 */
+  border-bottom: 1px solid rgba(41, 41, 41, 0.204); /* 두 번째 실선 */
+  height: 4px; /* 선 사이의 간격 조정 */
+  margin: -190px 0; /* 위, 아래 간격 조정 */
+  width: 100%; /* 전체 너비로 설정 */
+  
+}
 .wrapper1 {
   height: 475px;
   width: 471px;

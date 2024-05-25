@@ -1,0 +1,44 @@
+.groupChild,
+.text {
+  position: absolute;
+  top: 86px;
+  left: 30px;
+  
+}
+.groupChild {
+  top: 0;
+  left: 0;
+  background-color: var(--color-gainsboro);
+  width: 113px;
+  height: 110px;
+}
+.b,
+.div {
+  position: relative;
+  top: 0;
+  left: 133px;
+}
+.div {
+  top: 25px;
+  left: 134px;
+  font-size: var(--font-size-base);
+}
+
+.textParent {
+  position: relative;
+  margin-top: 60px;
+  margin-left: 40px; /* 왼쪽에서 200px 떨어짐 */
+  
+  width: auto; /* 너비를 자동으로 설정하거나, % 단위로 설정할 수 있음 */
+  
+  height: 110px;
+  text-align: left;
+  font-size: var(--font-size-lg);
+  color: var(--color-black);
+  font-family: var(--font-inter);
+  padding-bottom: 30px;
+  border-bottom: solid;
+  margin-bottom: 20px;
+  border-color: lightgray;
+  border-color: lightgray;
+}

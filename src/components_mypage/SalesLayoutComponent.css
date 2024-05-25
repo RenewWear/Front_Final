@@ -12,13 +12,13 @@
     text
 }
 
-  .menu-container {
-    border-top: 2px solid #000; /* 위쪽 선 */
-    border-bottom: 2px solid #000; /* 아래쪽 선 */
-    text-align: center;
+.menu-container {
+  border-top: 2px solid #000; /* 위쪽 선 */
+  border-bottom: 2px solid #000; /* 아래쪽 선 */
+  text-align: center;
     padding: 10px;
     font-weight: bold;
-  }
+}
   
   .menu-item {
     padding-right:400px; /* 메뉴 아이템 간의 간격 */

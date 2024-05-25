@@ -112,17 +112,26 @@ const InformationUpperUpload = () => {
                             )}
                           </div>
                         </div>
+                        {/*여기다 가격 */}
+                        <div className="instruction-tree">
+                          <h2 className="h21">가격</h2>
+                          <div className="connection-matrix">
+                          <div className="event-dispatcher">
+                          <Form.Control className='colors'type="number" placeholder="숫자만 입력하시오" />
+                          </div>
+                        </div>
+                        </div>
                       </div>
                     </div>
                   </div>
-                  <div className="instruction-tree">
-                    <h2 className="h22">가격</h2>
+                  {/*<div className="instruction-tree">
+                    <h2 className="h21">가격</h2>
                     <div className="connection-matrix">
                       <div className="event-dispatcher">
                         <Form.Control className='colors'type="number" placeholder="숫자만 입력하시오" />
                       </div>
                     </div>
-                  </div>
+                    </div>*/}
                 </div>
               </div>
               <div className="queue-manager">
@@ -144,6 +153,7 @@ const InformationUpperUpload = () => {
                       placeholder="숫자만 입력하시오" />
                     </Form>
                   </div>
+                  
                 </div>
               </div>
             </div>

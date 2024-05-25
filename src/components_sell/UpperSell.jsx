@@ -24,8 +24,11 @@ const UpperSell = () => {
               </div>
             </div>
           </div>
+          
         </div>
+        <div className="double-line"></div>
       </div>
+      
     </div>
   );
 };

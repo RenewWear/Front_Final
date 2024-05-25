@@ -1,26 +1,26 @@
 .title {
-    font-size: 25px;
-    margin-left: 20px;
-    margin-top: 20px;
-    color:black;
-    font-weight: bold;
+  font-size: 25px;
+  margin-left: 20px;
+  margin-top: 20px;
+  color:black;
+  font-weight: bold;
 }
 
 .container {
-    text-align: center;
-    margin: 20px;
+  text-align: center;
+  margin: 20px;
 }
 
-  .menu-container {
-    border-top: 2px solid #000; /* 위쪽 선 */
-    border-bottom: 2px solid #000; /* 아래쪽 선 */
-    padding: 10px 0; /* 선과 메뉴 아이템 사이의 간격 */
-    text-align: center;
-  }
-  
-  .menu-item {
-    padding-right:400px; /* 메뉴 아이템 간의 간격 */
-    display: inline-block; /* 메뉴 아이템을 인라인으로 표시 */
-  }
-  
-  
+.menu-container {
+  border-top: 2px solid #000; /* 위쪽 선 */
+  border-bottom: 2px solid #000; /* 아래쪽 선 */
+  padding: 10px 0; /* 선과 메뉴 아이템 사이의 간격 */
+  text-align: center;
+}
+
+.menu-item {
+  padding-right:400px; /* 메뉴 아이템 간의 간격 */
+  display: inline-block; /* 메뉴 아이템을 인라인으로 표시 */
+}
+
+
