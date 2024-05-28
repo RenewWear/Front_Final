@@ -1,0 +1,59 @@
+.login{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login_container {
+    background-color: var(--color-seashell); /* 배경색 */
+    padding: 20px; /* 내부 여백 */
+    width: 500px; /* 너비 */
+    height: auto; /* 높이는 자동으로 내용물에 맞춰짐 */
+    border-radius: 10px; /* 모서리를 둥글게 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 그림자 추가 */
+    margin: auto; /* 가운데 정렬 */
+    display: flex; /* flexbox 레이아웃 사용 */
+    flex-direction: column; /* 자식 요소들을 세로로 배치 */
+    align-items: center; /* 자식 요소들을 가운데 정렬 */
+  }
+
+.login_title{
+    color: var(--color-mediumseagreen);
+    font-family: var(--font-poppins);
+    font-size: 40px;
+}
+
+.login_subtitle{
+    font-size: 25px;
+}
+
+.login_form{
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    gap: 10px;
+
+}
+
+.login_input{
+    width: 300px;
+    height: 30px;
+}
+
+.login_button{
+    height: 35px;
+    background-color: var(--color-mediumseagreen);
+    border: None;
+    color:white;
+    font-weight: 600;
+    border-radius: 10px;
+    font-size: 15px;
+}
+
+.login_register{
+    text-decoration: underline;
+    font-size: 14px;
+    margin-top: 20px;
+    color:gray
+}

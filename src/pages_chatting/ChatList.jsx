@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import './ChatList.css'
+import './ChatList.css';
 import ChattingRequest from './ChattingRequest';
 import ChattingReceive from './ChattingReceive';
 import HeaderComponent from '../components_header/HeaderComponent';
@@ -18,7 +18,7 @@ const ChatList = async (user_id) => {
 
 const ChatListComponent = () => {
   const [chatList, setChatList] = useState([]);
-  const user_id = 2; // user_id를 상수로 설정
+  const user_id = localStorage.getItem('user_id');
   const [selectedRoomId, setSelectedRoomId] = useState(null);
   const [selectedChatForRequest, setSelectedChatForRequest] = useState(null);
 

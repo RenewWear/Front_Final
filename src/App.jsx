@@ -11,6 +11,8 @@ import ChatListComponent from "./pages_chatting/ChatList";
 import FrameSell from "./pages_sell/FrameSell";
 import FrameMain from "./pages_main/FrameMain";
 import FrameUpload from "./pages_upload/FrameUpload";
+import Login from "./pages_login/Login";
+import Register from "./pages_login/Register";
 
 function App() {
   const action = useNavigationType();
@@ -56,6 +58,8 @@ function App() {
       <Route path="/chat" element={<ChatListComponent/>} />
       <Route path="/upload" element={<FrameUpload />} />
       <Route path="/sell" element={<FrameSell />} />
+      <Route path="/login" element={<Login/>} />
+      <Route path="/register" element={<Register/>}/>
 
     </Routes>
   );

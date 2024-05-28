@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import headerStyle from "./HeaderComponent.module.css";
+import axios from 'axios';
 
 import MyPageIcon from "/user.svg";
 import LikeIcon from "/vector-15.svg";
@@ -9,16 +10,35 @@ import ChatIcon from "/chat_alt_2_light.svg";
 const HeaderComponent = () => {
   const navigate = useNavigate(); 
 
-  //메인페이지로 이동함수 
+  //메인페이지로 이동
   const handleToMainPage = () => {
-    alert("메인페이지로 이동합니다."); // 클릭 시 알람 표시
-    // navigate.push("/");
+    navigate("/");
   };
 
-  //판매 내역으로 이동 
-  const handleToSalesPage = () => {
-    navigate("/mysell");
+  //업로드 페이지로 이동  
+  const handleToSalesPage = async(event) => {
+    try{
+      const response = await axios.post("http://localhost:8080/post/create_id");
+      navigate("/upload");
+    }
+    
   }
+
+  const handleSubmit = async (event) => {
+    event.preventDefault(); // 기본 form 제출 동작을 방지합니다.
+    try {
+        const requestBody = {
+            "login_id": id,
+            "pw": password
+        };
+        const response = await axios.post(`http://localhost:8080/auth/login`, requestBody);
+        const userId = response.data.user_id;
+        localStorage.setItem("user_id",userId);
+        navigate("/");
+    } catch (error) {
+        alert("로그인 실패 : 없는 회원이거나 비밀번호가 틀렸습니다.");
+    }
+  };
 
   //마이페이지로 이동 
   const handleToMyPage = ()=> {
@@ -37,7 +57,7 @@ const HeaderComponent = () => {
 
   //로그아웃 API 연결 
   const handleClickLogout = () =>{
-    
+    navigate("/login")
   }
 
 

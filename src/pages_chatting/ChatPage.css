@@ -31,7 +31,7 @@
   }
   
   .message-input {
-    height: 2.5vh;
+    height: 40px;
     padding: 10px;
     margin-right: 10px;
     border: 1px solid #ddd;

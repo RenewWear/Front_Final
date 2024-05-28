@@ -1,0 +1,61 @@
+.register{
+    background-color: var(--color-seashell);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.register_container{
+    background-color: white; /* 배경색 */
+    padding: 20px; /* 내부 여백 */
+    width: 500px; /* 너비 */
+    height: 60vh; 
+    border-radius: 10px; /* 모서리를 둥글게 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 그림자 추가 */
+    margin: auto; /* 가운데 정렬 */
+    display: flex; /* flexbox 레이아웃 사용 */
+    flex-direction: column; /* 자식 요소들을 세로로 배치 */
+    align-items: center; /* 자식 요소들을 가운데 정렬 */
+}
+
+.register_title{
+    margin-top: 40px;
+    color: var(--color-mediumseagreen);
+    font-size: 35px;
+    font-family: var(--font-poppins);
+}
+
+.register_subtitle{
+    color: black;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.register_from{
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    gap: 15px;
+}
+
+.register_input{
+    height: 25px;
+    width: 250px;
+}
+
+.register_button{
+    background-color: var(--color-mediumseagreen);
+    color: white;
+    border: None;
+    height: 30px;
+    border-radius: 10px;
+    font-weight: 600;
+}
+
+.register_login{
+    text-decoration: underline;
+    font-size: 14px;
+    margin-top: 20px;
+    color:gray
+}
