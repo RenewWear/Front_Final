@@ -21,8 +21,10 @@ const HeaderComponent = () => {
       const response = await axios.post("http://localhost:8080/post/create_id");
       navigate("/upload");
     }
-    
-  }
+    catch (error) {
+      alert("실패");
+    }
+  };
 
   const handleSubmit = async (event) => {
     event.preventDefault(); // 기본 form 제출 동작을 방지합니다.
