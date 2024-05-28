@@ -1,41 +1,46 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Form } from "react-bootstrap";
 import "./InformationLowerUpload.css";
-import {useState} from 'react';
+import { useState } from 'react';
 
-const InformationLowerUpload = () => {
-  
-  const [selectTrade, setSelectTrade] = useState('trade-possible');
+const InformationLowerUpload = ({
+  selectTrade, setSelectTrade,
+  selectSize, setSelectSize,
+  selectUsage, setSelectUsage,
+  selectedBrands, setSelectedBrands,
+  body, setBody,
+}) => {
   
   const handleTrade = (state) => {
     setSelectTrade(state);
-    // console.log(state);
+    console.log(state);
   };
 
-  const [selectSize, setSelectSize] = useState('size_M');
-  
   const handleSize = (state) => {
     setSelectSize(state);
-    // console.log(state);
+    console.log(state);
   };
 
-  const [selectUsage, setSelectUsage] = useState('usage-little');
-  
   const handleUsage = (state) => {
     setSelectUsage(state);
-    // console.log(state);
+    console.log(state);
   };
 
-  /// 브랜드 함수
+  const handleBody = (event) => {
+    setBody(event.target.value);
+    console.log(body);
+  }
+
   const brands = {
     "1": "Covernat",
     "2": "Adidas",
     "3": "Nike",
     "4": "기타"
   };
-  const [selectedBrands, setSelectedBrands] = useState("");
+
   const handleBrandChange = (event) => {
     setSelectedBrands(event.target.value);
+    console.log(selectedBrands);
   };
 
   return (
@@ -106,7 +111,7 @@ const InformationLowerUpload = () => {
       <div className="description">
         <h2 className="h29">설명</h2>
         <Form.Group className="formgroup">
-          <Form.Control as="textarea" defaultValue="" className="css-textarea" />
+          <Form.Control as="textarea" defaultValue="" className="css-textarea" onChange={handleBody} />
         </Form.Group>
       </div>
     </div>

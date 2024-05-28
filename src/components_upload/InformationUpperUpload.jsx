@@ -1,20 +1,60 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Form } from "react-bootstrap";
 import "./InformationUpperUpload.css";
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 
-const InformationUpperUpload = () => {
+const InformationUpperUpload = ({
+  postId,
+  title, setTitle,
+  price, setPrice,
+  location, setLocation,
+  delivery, setDelivery,
+  category, setCategory 
+}) => {
+  // useLocation 훅을 사용하여 navigate로부터 받은 state에 접근
+  // const { state } = useLocation();
+  // const { postId } = state || {}; // state가 없는 경우를 대비하여 기본값 설정
+  // const [title, setTitle] = useState(""); //제목
+  // const [price, setPrice] = useState(""); //가격
+  // const [location, setLocation] = useState(""); //거래 희망 장소 
+  // const [delivery, setDelivery] = useState(""); //택배비 
+  // const [category, setCategory] = useState("");
+  const [selectedCategory, setSelectedCategory] = useState(""); //상위 카테고리 
+  const [selectedSubCategory, setSelectedSubCategory] = useState(""); //서브 카테고리 
+  const [selectedUpperCategory, setSelectedUpperCategory] = useState("");
+  //이미지 관련 부분 
   const [selectedImage, setSelectedImage] = useState(null);
 
   const handleImageChange = (event) => {
     const imageFile = event.target.files[0];
     setSelectedImage(URL.createObjectURL(imageFile));
+
+    // FormData 객체 생성 및 이미지 파일 추가
+    const formData = new FormData();
+    formData.append('image', imageFile);  
+    // 이미지 업로드 요청 보내기
+    try{
+      fetch(`http://127.0.0.1:8080/post/addimg/${postId}`, {
+      method: 'POST',
+      body: formData,
+      })
+    }catch (error){
+      console.error("Error saving img:", error);
+    }
   };
 
   const handleClick = () => {
     // 파일 선택 버튼 클릭 시 input 요소를 활성화
     document.getElementById('fileInput').click();
   };
+   
+  //제목 입력 시 동작 
+   // 입력 필드가 변경될 때마다 호출되는 함수
+   const handleChange = (event) => {
+     setTitle(event.target.value);
+     console.log("title: ",title)
+   };
 
 
 {/* 가격, 거래 희망 장소 관련 버튼들 */}
@@ -48,15 +88,47 @@ const InformationUpperUpload = () => {
   "슬리퍼", "모카신/보트", "부츠", "기타"],
     "9": ["기타"]
   };
-  const [selectedCategory, setSelectedCategory] = useState("1");
-  const [selectedSubCategory, setSelectedSubCategory] = useState("");
+  
+
+  //----카테고리 ----- 
   const handleCategoryChange = (e) => {
+    // setSelectedSubCategory("");
+    const key = e.target.value;
+    const categoryName = categories[key];
+    setSelectedUpperCategory (categoryName);
+    setSelectedSubCategory("");
     setSelectedCategory(e.target.value);
-    setSelectedSubCategory(""); // Reset subcategory when category changes
+    // setSelectedSubCategory(""); // Reset subcategory when category changes
   };
   const handleSubCategoryChange = (e) => {
     setSelectedSubCategory(e.target.value);
   };
+
+  // categoryState가 변경될 때마다 combinedCategory를 업데이트
+  useEffect(() => {
+    const category = `${selectedUpperCategory},${selectedSubCategory}`;
+    setCategory(category);
+    console.log("카테고리:",category);
+  }, [selectedCategory, selectedSubCategory]);
+
+  //----가격 ----- 
+  const handlePriceChange = (e) => {
+    setPrice(e.target.value);
+    console.log("가격 :",price);
+  };
+
+  //----거래 희망 장소---
+  const handleLocationChange = (e) => {
+    setLocation(e.target.value);
+    console.log("거래 희망 장소:",location);
+  };
+
+  //---택배비 ----
+  const handleDeliveryChange = (e) => {
+    setDelivery(e.target.value);
+    console.log("택배비 : ",delivery);
+  }
+
 
 
   return (
@@ -87,9 +159,9 @@ const InformationUpperUpload = () => {
                       <div className="data-aggregator-parent">
                         <div className="data-aggregator">
                           <h2 className="h2"> 제목</h2>
-                          <div className="shape-array">
+                          <div className="shape-array"> 
                             <Form className="connection-nexus">
-                              <Form.Control className='colors' type="text" />
+                              <Form.Control className='colors' type="text" value={title} onChange={handleChange} />
                             </Form>
                           </div>
                         </div>
@@ -117,21 +189,13 @@ const InformationUpperUpload = () => {
                           <h2 className="h21">가격</h2>
                           <div className="connection-matrix">
                           <div className="event-dispatcher">
-                          <Form.Control className='colors'type="number" placeholder="숫자만 입력하시오" />
+                          <Form.Control className='colors'type="number" placeholder="숫자만 입력하시오" onChange={handlePriceChange} />
                           </div>
                         </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                  {/*<div className="instruction-tree">
-                    <h2 className="h21">가격</h2>
-                    <div className="connection-matrix">
-                      <div className="event-dispatcher">
-                        <Form.Control className='colors'type="number" placeholder="숫자만 입력하시오" />
-                      </div>
-                    </div>
-                    </div>*/}
                 </div>
               </div>
               <div className="queue-manager">
@@ -139,7 +203,7 @@ const InformationUpperUpload = () => {
                   <h2 className="h23">거래 희망 장소</h2>    
                 </div>
                 <div className="database-access">
-                <Form.Control className='colors' type="text" />
+                <Form.Control className='colors' type="text" onChange={handleLocationChange}/>
                   <div className="place">
                     <div className="div17">
                       <button 
@@ -149,8 +213,8 @@ const InformationUpperUpload = () => {
                     <Form className="delivery-fee">
                       <div className="delivery-text">배송비</div>
                       <Form.Control className='colors' 
-                      type="number" disabled={!active_delivery}
-                      placeholder="숫자만 입력하시오" />
+                        type="number" disabled={!active_delivery}
+                        placeholder="숫자만 입력하시오" onChange={handleDeliveryChange}/>
                     </Form>
                   </div>
                   

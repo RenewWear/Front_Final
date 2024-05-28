@@ -18,8 +18,12 @@ const HeaderComponent = () => {
   //업로드 페이지로 이동  
   const handleToSalesPage = async(event) => {
     try{
-      const response = await axios.post("http://localhost:8080/post/create_id");
-      navigate("/upload");
+      const response = await axios.post("http://127.0.0.1:8080/post/create_postid");  //post_id 생성 & 반환 
+      const postId = response.data;
+      console.count("반환받은 post id :",postId)
+      navigate("/upload", { state: { postId: postId } }); //반환 받은 post_id를 FrameUpload 컴포넌트에 전달 & 화면 이동 
+    }catch (error){
+      console.error("Error creating post id:", error);
     }
     catch (error) {
       alert("실패");
