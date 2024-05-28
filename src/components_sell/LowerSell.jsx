@@ -1,6 +1,8 @@
 import "./LowerSell.css";
+import axios from 'axios';
 
-const LowerSell = () => {
+const LowerSell = ({location, delivery, exchange,body}) => {
+
   return (
     <div className="frame-wrapper3">
   
@@ -25,21 +27,21 @@ const LowerSell = () => {
                           <div className="wrapper7">
                             <b className="b12">거래지역</b>
                           </div>
-                          <b className="place">거래지역어디</b>
+                          <b className="place">{location}</b>
                         </div>
                       </div>
                       <div className="frame-parent7">
                         <div className="wrapper8">
                           <b className="b14">배송비</b>
                         </div>
-                        <b className="deliveryFee">직거래</b>
+                        <b className="deliveryFee">{delivery}</b>
                       </div>
                       <div className="frame-wrapper8">
                         <div className="frame-parent8">
                           <div className="wrapper9">
                             <b className="b16">교환가능여부</b>
                           </div>
-                          <b className="trade-ok">가능/불가</b>
+                          <b className="trade-ok">{exchange}</b>
                         </div>
                       </div>
                     </div>
@@ -52,12 +54,7 @@ const LowerSell = () => {
                   
                   <div className="div6">
                     <span className="txt">
-                      <p className="product-information">
-                        ㄴㅇㄹㄴㅁㄴㅇㄹㅁㄴㅇㄹㅁㄴㅇㄹㅁㄴㅇㄹㅁㄴㅇ
-                        ㄴㅁㅇㄹㅁㄴㅇㄴㅁㅇㄹㅁㄴㅇㄹㅁㄴㅇㄹㅁㄴ
-                        ㅇㄹㄴㅁㅇㄹㅁㄴㅇㄹㅁㄴㅇㄹㄴㅁㅇㄹㄴㅁㅇㄹㄴㅁ어ㅘㄹㄴㅁㅎㅇ러ㅘㄴㅁㅇㅎ라ㅓㅗㄴㄹ히ㅗㅓㅏㄴㅇ롸ㅓ모하ㅓㅣㅇㄴㅎㄴㅇ
-                        ㅎㅁㄴㅇ하ㅣ며노리ㅏㅁㄴ호라ㅣㅁㄴㅇ홈니ㅏ호ㅕㅑㅇㄹㅁㄴㅇㄹㅁㄴㅇㄹㅁㅇㄴㄹㅁㅇㄴㄹㅁㄴㅇㅇㄹㅁㄴㅇㅇㄹㅁㄴㅇㅇㄹ
-                      </p>
+                      <p className="product-information">{body}</p>
                     </span>
                   </div>
                   <div className="vertical-line"></div> 
