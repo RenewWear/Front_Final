@@ -25,9 +25,6 @@ const HeaderComponent = () => {
     }catch (error){
       console.error("Error creating post id:", error);
     }
-    catch (error) {
-      alert("실패");
-    }
   };
 
   const handleSubmit = async (event) => {
