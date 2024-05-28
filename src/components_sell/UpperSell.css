@@ -3,6 +3,7 @@
   flex: 1;
   position: relative;
   border-radius: var(--br-11xl);
+  justify-content: space-between;
   background-color: var(--color-seashell);
   border: 1px solid var(--color-silver);
 }
@@ -10,7 +11,7 @@
   border-top: 1px solid rgba(41, 41, 41, 0.204); /* 첫 번째 실선 */
   border-bottom: 1px solid rgba(41, 41, 41, 0.204); /* 두 번째 실선 */
   height: 4px; /* 선 사이의 간격 조정 */
-  margin: -190px 0; /* 위, 아래 간격 조정 */
+  margin: -165px 0; /* 위, 아래 간격 조정 */
   width: 100%; /* 전체 너비로 설정 */
   
 }
@@ -297,4 +298,39 @@
   .frame-div {
     gap: var(--gap-4xl);
   }
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.button-prev, .button-next {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.button-prev {
+  background-color: var(--color-seashell);
+  border: 1px solid var(--color-silver);
+  color: black;
+}
+
+.button-prev:hover {
+  background-color: #1CCD8D;
+}
+
+.button-next {
+  background-color: var(--color-seashell);
+  border: 1px solid var(--color-silver);
+  color: black;
+}
+
+.button-next:hover {
+  background-color: #1CCD8D;
 }
