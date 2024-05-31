@@ -7,6 +7,7 @@ import { useLocation } from 'react-router-dom';
 const InformationUpperUpload = ({
   postId,
   title, setTitle,
+  tag, setTag,
   price, setPrice,
   location, setLocation,
   delivery, setDelivery,
@@ -20,6 +21,7 @@ const InformationUpperUpload = ({
   // const [location, setLocation] = useState(""); //거래 희망 장소 
   // const [delivery, setDelivery] = useState(""); //택배비 
   // const [category, setCategory] = useState("");
+  // const [tag, setTag] = userState(""); // 태그
   const [selectedCategory, setSelectedCategory] = useState(""); //상위 카테고리 
   const [selectedSubCategory, setSelectedSubCategory] = useState(""); //서브 카테고리 
   const [selectedUpperCategory, setSelectedUpperCategory] = useState("");
@@ -162,6 +164,10 @@ const InformationUpperUpload = ({
                           <div className="shape-array"> 
                             <Form className="connection-nexus">
                               <Form.Control className='colors' type="text" value={title} onChange={handleChange} />
+                            </Form>
+                            <div className="tagText">태그</div>
+                            <Form className="tagWrapper">
+                              <Form.Control className='colors' type="text" value={tag} />
                             </Form>
                           </div>
                         </div>
