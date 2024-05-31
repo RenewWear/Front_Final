@@ -131,7 +131,10 @@ const InformationUpperUpload = ({
     console.log("택배비 : ",delivery);
   }
 
-
+  const handleTagChange = (e) => {
+    setTag(e.target.value);
+    console.log("태그 : ",tag);
+  }
 
   return (
     <div className="frame-container">
@@ -163,11 +166,11 @@ const InformationUpperUpload = ({
                           <h2 className="h2"> 제목</h2>
                           <div className="shape-array"> 
                             <Form className="connection-nexus">
-                              <Form.Control className='colors' type="text" value={title} onChange={handleChange} />
+                              <Form.Control className='colors' type="text" value={title} onChange={handleTagChange} />
                             </Form>
                             <div className="tagText">태그</div>
                             <Form className="tagWrapper">
-                              <Form.Control className='colors' type="text" value={tag} />
+                              <Form.Control className='colors' type="text" value={tag} onChange={handleChange} />
                             </Form>
                           </div>
                         </div>
