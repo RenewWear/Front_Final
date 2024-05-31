@@ -1,3 +1,26 @@
+.tagWrapper {
+  border: 0;
+  background-color: transparent;
+  flex: 1;
+  font-family: var(--font-inter);
+  font-weight: 700;
+  font-size: var(--font-size-base);
+  color: var(--color-black);
+  min-width: 277px;
+  flex-wrap: wrap;
+  max-width: 100%;
+  margin: 10px;
+  position: relative;
+  left: 150px;
+  bottom: 50px;
+}
+.tagText {
+  position: relative;
+  left: 100px;
+  bottom: 15px;
+  font-size: 18px;
+  font-weight: bold;
+}
 .div13 {
   height: 470px;
   width: 471px;
