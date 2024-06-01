@@ -12,11 +12,7 @@ const UpperSell = ({title, price, size, used, brand_id, category_id,img_urls}) =
   const handlePrev = () => {
     setCurrentIndex((prevIndex) => (prevIndex - 1 + img_urls.length) % img_urls.length);
   };
-  img_urls=['https://mediaservice.audi.com/media/fast/H4sIAAAAAAAAAFvzloG1tIiBOTrayfuvpGh6-m1zJgaGigIGBgZGoDhTtNOaz-I_2DhCHsCEtzEwF-SlMwJZKUycmbmJ6an6QD4_I3taTmV-aUkxO0grj4OJvKrLmc65T3rWiLaKlnFop_H2MLACdTFqAQnmQiDB9wZIcCoxgEmQeQUgIgHEZ3JiZmBgrQAyIhlAgI-vtCinILEoMVevPDOlJENQw4BIIMzu4hri6OkTDACYh-QJ6QAAAA?wid=850',
-            'https://mediaservice.audi.com/media/fast/H4sIAAAAAAAAAFvzloG1tIiBOTrayfuvpGh6-m1zJgaGigIGBgZGoDhTtNOaz-I_2DhCHsCEtzEwF-SlMwJZKUycmbmJ6an6QD4_I3taTmV-aUkxO0grz_Ey3rztB3tv9L6Un8rhkCNeUFV3gIEVqIvRDUgwpwIJvv1AglOWAUyCzJsEIgpAfCYHZgYG1gogI5IBBPj4SotyChKLEnP1yjNTSjIENQyIBMLsLq4hjp4-wQCDJt2D6QAAAA?wid=850',
-            'https://cdn.motor1.com/images/mgl/W8oJZg/s3/2024-audi-rs6-avant-performance-pricing.jpg'
-          ]
-  
+
   return (
     <div className="frame-container">
       <div className="frame-div">
