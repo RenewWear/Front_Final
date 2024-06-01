@@ -1,21 +1,26 @@
 import "./ProductCardMain.css";
+import React from "react";
+import { useNavigate } from "react-router-dom";
 
-const ProductCardMain = () => {
+const ProductCardMain = ({ title, price, tag, category, subcategory, brand, status, post_id=3,img_urls}) => {
+  const navigate = useNavigate();
 
   const imgClick = () => {
-    alert('해당 판매 글 페이지 이동');
+      navigate(`/sell/${post_id}`);
+     alert('해당 판매 페이지 이동')
   };
 
   return (
     <div className="mainCard">
       <div className="mainImageWrapper">
-        <img className="mainImage" loading="lazy" alt="asd" src="/@2x.png" onClick={imgClick} />
+        <img className="mainImage" loading="lazy" alt="asd" src={img_urls} onClick={imgClick} />
       </div>
-      <div className="mainCardTitle">뉴발 996 팝니다 @@@</div>
-      <div className="mainCards" style={{ fontSize: "22px" }}>117000원</div>
-      <div className="mainCards">스니커즈, 스포츠</div>
-      <div className="mainCards">New Balance</div>
-      <div className="mainCards">새 상품</div>      
+      <div className="mainCardTitle">{title}</div>
+      <div className="mainTag">#{tag}</div>
+      <div className="mainCards" style={{ fontSize: "22px" }}>{price}원</div>
+      <div className="mainCards">카테고리 : {category}-{subcategory}</div>
+      <div className="mainCards">브랜드 : {brand}</div>
+      <div className="mainCards">사용감 : {status}</div>      
     </div>
   );
 };

@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import ProductCardMain from "./ProductCardMain";
 import "./ProductListMain.css";
-// import axios from "axios";
+// import { l } from "vite/dist/node/types.d-aGj9QkWt";
 
 const ProductListMain = ({ user_id }) => {
 /// 카테고리 함수
@@ -108,7 +108,8 @@ const ProductListMain = ({ user_id }) => {
   const [salesData, setSalesData] = useState([]);
   const [originalSalesData, setOriginalSalesData] = useState([]);
 
-  // useEffect(() => {
+
+  useEffect(() => {
   //   if (user_id) {
   //     axios.get(`http://127.0.0.1:8080/post/getpost`)
   //       .then(response => {
@@ -133,19 +134,18 @@ const ProductListMain = ({ user_id }) => {
   //       });
   //   }
   // }, [user_id]);
+  
 
-  useEffect( () => {
- 
   const mockSalesData = [
-    { title: '뉴발란스996',  price: 10000, brand: '나이키', tag: "태그", used: '새 상품', size: 'M', category: '상의', subcategory: '후드', user_id: 3, post_id: 3, liked_id: 5},
-    { title: '뉴발란스995',  price: 20000, brand: '나이키', tag: "태asdas그", used: '새 상품', size: 'L', category: '상의', subcategory: '후드', user_id: 3, post_id: 3, liked_id: 5},
-    { title: '뉴발란스994',  price: 30000, brand: '나이키', tag: "태그", used: '새 상품', size: 'S', category: '아우터', subcategory: '후드', user_id: 3, post_id: 3, liked_id: 5},
-    { title: '뉴발란스993',  price: 40000, brand: '노스페이스', tag: "태그", used: '적음', size: 'L', category: '상의', subcategory: '후드', user_id: 3, post_id: 3, liked_id: 5},
-    { title: '뉴발란스992',  price: 50000, brand: '트릴리온', tag: "태그", used: '고장', size: 'XL', category: '바지', subcategory: '후드', user_id: 3, post_id: 3, liked_id: 5},
-    { title: '뉴발란스992',  price: 90000, brand: '노스페이스', tag: "태그", used: '적음', size: 'L', category: '상의', subcategory: '후드', user_id: 3, post_id: 3, liked_id: 5},
-    { title: '뉴발란스992',  price: 110000, brand: '트릴리온', tag: "태그", used: '적음', size: 'XL', category: '신발', subcategory: '후드', user_id: 3, post_id: 3, liked_id: 5},
-    { title: '뉴발란스996',  price: 150000, brand: '노스페이스', tag: "태그", used: '고장', size: 'L', category: '상의', subcategory: '후드', user_id: 3, post_id: 3, liked_id: 5},
-    { title: '뉴발란스991',  price: 230000, brand: '트래블', tag: "태그", used: '많음', size: 'L', category: '상의', subcategory: '후드', user_id: 3, post_id: 3, liked_id: 5}
+    { title: '뉴발란스996',  price: 10000, tag: '1232', brand: '나이키', status: '새 상품', size: 'M', category: '상의', subcategory: '후드', user_id: 3, post_id: 3, liked_id: 5,img_urls:[['https://search.pstatic.net/sunny/?src=https%3A%2F%2Fedgio.clien.net%2FF01%2F10053782%2F2f1339f2052298.jpg%3Fscale%3Dwidth%255B740%255D%2Coptions%255Blimit%255D&type=sc960_832'],['https://search.pstatic.net/sunny/?src=https%3A%2F%2Fedgio.clien.net%2FF01%2F10053782%2F2f1339f2052298.jpg%3Fscale%3Dwidth%255B740%255D%2Coptions%255Blimit%255D&type=sc960_832']]},
+    { title: '뉴발란스996',  price: 10000, tag: '1232', brand: '나이키', status: '새 상품', size: 'L', category: '상의', subcategory: '후드', user_id: 3, post_id: 3, liked_id: 5,img_urls:[['https://search.pstatic.net/sunny/?src=https%3A%2F%2Fedgio.clien.net%2FF01%2F10053782%2F2f1339f2052298.jpg%3Fscale%3Dwidth%255B740%255D%2Coptions%255Blimit%255D&type=sc960_832'],['https://search.pstatic.net/sunny/?src=https%3A%2F%2Fedgio.clien.net%2FF01%2F10053782%2F2f1339f2052298.jpg%3Fscale%3Dwidth%255B740%255D%2Coptions%255Blimit%255D&type=sc960_832']]},
+    { title: '뉴발란스996',  price: 10000, tag: '1232', brand: '나이키', status: '새 상품', size: 'S', category: '아우터', subcategory: '후드', user_id: 3, post_id: 3, liked_id: 5,img_urls:[['https://search.pstatic.net/sunny/?src=https%3A%2F%2Fedgio.clien.net%2FF01%2F10053782%2F2f1339f2052298.jpg%3Fscale%3Dwidth%255B740%255D%2Coptions%255Blimit%255D&type=sc960_832'],['https://search.pstatic.net/sunny/?src=https%3A%2F%2Fedgio.clien.net%2FF01%2F10053782%2F2f1339f2052298.jpg%3Fscale%3Dwidth%255B740%255D%2Coptions%255Blimit%255D&type=sc960_832']]},
+    { title: '뉴발란스996',  price: 10000, tag: '1232', brand: '노스페이스', status: '적음', size: 'L', category: '상의', subcategory: '후드', user_id: 3, post_id: 3, liked_id: 5,img_urls:[['https://search.pstatic.net/sunny/?src=https%3A%2F%2Fedgio.clien.net%2FF01%2F10053782%2F2f1339f2052298.jpg%3Fscale%3Dwidth%255B740%255D%2Coptions%255Blimit%255D&type=sc960_832'],['https://search.pstatic.net/sunny/?src=https%3A%2F%2Fedgio.clien.net%2FF01%2F10053782%2F2f1339f2052298.jpg%3Fscale%3Dwidth%255B740%255D%2Coptions%255Blimit%255D&type=sc960_832']]},
+    { title: '뉴발란스996',  price: 10000, tag: '1232', brand: '트릴리온', status: '고장', size: 'XL', category: '바지', subcategory: '후드', user_id: 3, post_id: 3, liked_id: 5,img_urls:[['https://search.pstatic.net/sunny/?src=https%3A%2F%2Fedgio.clien.net%2FF01%2F10053782%2F2f1339f2052298.jpg%3Fscale%3Dwidth%255B740%255D%2Coptions%255Blimit%255D&type=sc960_832'],['https://search.pstatic.net/sunny/?src=https%3A%2F%2Fedgio.clien.net%2FF01%2F10053782%2F2f1339f2052298.jpg%3Fscale%3Dwidth%255B740%255D%2Coptions%255Blimit%255D&type=sc960_832']]},
+    { title: '뉴발란스996',  price: 10000, tag: '1232', brand: '노스페이스', status: '적음', size: 'L', category: '상의', subcategory: '후드', user_id: 3, post_id: 3, liked_id: 5,img_urls:[['https://search.pstatic.net/sunny/?src=https%3A%2F%2Fedgio.clien.net%2FF01%2F10053782%2F2f1339f2052298.jpg%3Fscale%3Dwidth%255B740%255D%2Coptions%255Blimit%255D&type=sc960_832'],['https://search.pstatic.net/sunny/?src=https%3A%2F%2Fedgio.clien.net%2FF01%2F10053782%2F2f1339f2052298.jpg%3Fscale%3Dwidth%255B740%255D%2Coptions%255Blimit%255D&type=sc960_832']]},
+    { title: '뉴발란스996',  price: 10000, tag: '1232', brand: '트릴리온', status: '적음', size: 'XL', category: '신발', subcategory: '후드', user_id: 3, post_id: 3, liked_id: 5,img_urls:[['https://search.pstatic.net/sunny/?src=https%3A%2F%2Fedgio.clien.net%2FF01%2F10053782%2F2f1339f2052298.jpg%3Fscale%3Dwidth%255B740%255D%2Coptions%255Blimit%255D&type=sc960_832'],['https://search.pstatic.net/sunny/?src=https%3A%2F%2Fedgio.clien.net%2FF01%2F10053782%2F2f1339f2052298.jpg%3Fscale%3Dwidth%255B740%255D%2Coptions%255Blimit%255D&type=sc960_832']]},
+    { title: '뉴발란스996',  price: 10000, tag: '1232', brand: '노스페이스', status: '고장', size: 'L', category: '상의', subcategory: '후드', user_id: 3, post_id: 3, liked_id: 5,img_urls:[['https://search.pstatic.net/sunny/?src=https%3A%2F%2Fedgio.clien.net%2FF01%2F10053782%2F2f1339f2052298.jpg%3Fscale%3Dwidth%255B740%255D%2Coptions%255Blimit%255D&type=sc960_832'],['https://search.pstatic.net/sunny/?src=https%3A%2F%2Fedgio.clien.net%2FF01%2F10053782%2F2f1339f2052298.jpg%3Fscale%3Dwidth%255B740%255D%2Coptions%255Blimit%255D&type=sc960_832']]},
+    { title: '뉴발란스996',  price: 10000, tag: '1232', brand: '트래블', status: '많음', size: 'L', category: '상의', subcategory: '후드', user_id: 3, post_id: 3, liked_id: 5,img_urls:[['https://search.pstatic.net/sunny/?src=https%3A%2F%2Fedgio.clien.net%2FF01%2F10053782%2F2f1339f2052298.jpg%3Fscale%3Dwidth%255B740%255D%2Coptions%255Blimit%255D&type=sc960_832'],['https://search.pstatic.net/sunny/?src=https%3A%2F%2Fedgio.clien.net%2FF01%2F10053782%2F2f1339f2052298.jpg%3Fscale%3Dwidth%255B740%255D%2Coptions%255Blimit%255D&type=sc960_832']]}
 
   ];
   setOriginalSalesData(mockSalesData); // 원본 데이터 설정
@@ -185,7 +185,7 @@ const ProductListMain = ({ user_id }) => {
       }
   
       if (selectedState !== "") {
-        passState = item.used === states[selectedState];
+        passState = item.status === states[selectedState];
       }
   
       if (selectedPrice !== "") {
@@ -200,32 +200,26 @@ const ProductListMain = ({ user_id }) => {
         const [minPrice, maxPrice] = priceRanges[selectedPrice];
         passPrice = item.price >= minPrice && item.price <= maxPrice;
       }
-
       return passCategory && passSubCategory && passBrand && passSize && passState && passPrice;
     });
   
     setSalesData(filteredData); // 검색 결과를 상태로 업데이트
-
-    
   };
-
-  const [searchTerm, setSearchTerm] = useState(""); // 검색어 상태 추가
-
-  useEffect(() => {
-    const filteredData = originalSalesData.filter((item) => {
-      // 검색어를 포함하는 게시물만 필터링하는 코드 추가
+  
+  const [searchTerm, setSearchTerm] = useState("");
+  useEffect(() =>{
+    const filteredData = originalSalesData.filter((item)=>{
       return item.title.toLowerCase().includes(searchTerm.toLowerCase());
     });
-    setSalesData(filteredData); // 필터링된 결과를 상태로 업데이트
-  }, [searchTerm, originalSalesData]);
-  
-  
+    setSalesData(filteredData);
 
+  },[searchTerm,originalSalesData]);
+  
   return (
     <div className="mainListWrapper">
       <div className="mainListParent">
         <div className="mainListTitleWrapper">
-          <input className="mainListTitle" type="text" placeholder="제목 검색"  value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} />
+          <input className="mainListTitle" type="text" placeholder="제목 검색" onChange={(e) => {setSearchTerm(e.target.value)}}/>
         </div>
         <div className="mainListTitleWrapper">
           <div className="mainList">
@@ -305,14 +299,15 @@ const ProductListMain = ({ user_id }) => {
           {salesData.map((sale, index) => (
             <ProductCardMain
               key={index}
-              tag={sale.tag}
               price={sale.price}
+              tag={sale.tag}
               title={sale.title}
               category={sale.category}
               subcategory={sale.subcategory}
-              used={sale.used}
+              status={sale.status}
               size={sale.size}
               brand={sale.brand}
+              img_urls={sale.img_urls[0]}
               />
           ))}
         </div>
