@@ -2,7 +2,7 @@ import "./ProductCardMain.css";
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-const ProductCardMain = ({ title, price, tag, category, subcategory, brand, status, post_id=3,img_urls}) => {
+const ProductCardMain = ({ title, price, tag, category, subcategory, brand, status, post_id,img_urls}) => {
   const navigate = useNavigate();
 
   const imgClick = () => {

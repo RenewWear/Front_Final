@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
 import ProductCardMain from "./ProductCardMain";
 import "./ProductListMain.css";
+import axios from 'axios';
 // import { l } from "vite/dist/node/types.d-aGj9QkWt";
 
-const ProductListMain = ({ user_id }) => {
+const ProductListMain = () => {
 /// 카테고리 함수
   const categories = {
     "1": "카테고리",
@@ -102,56 +103,32 @@ const ProductListMain = ({ user_id }) => {
     setSelectedPrice(event.target.value);
   };
 
-  
-
-///
   const [salesData, setSalesData] = useState([]);
   const [originalSalesData, setOriginalSalesData] = useState([]);
 
-
   useEffect(() => {
-  //   if (user_id) {
-  //     axios.get(`http://127.0.0.1:8080/post/getpost`)
-  //       .then(response => {
-  //         const data = response.data.map(item => ({
-  //           title: item.title,
-  //           price: parseInt(item.price, 10),
-  //           brand: brands[item.brand_id] || "기타",
-  //           tag: item.tag,
-  //           used: item.used,
-  //           size: item.size,
-  //           category: categories[item.category_id],
-  //           subcategory: "기타", // Assuming there's no subcategory in API response
-  //           user_id: item.user_id,
-  //           post_id: item.post_id,
-  //           liked_id: item.liked_id
-  //         }));
-  //         setOriginalSalesData(data);
-  //         setSalesData(data);
-  //       })
-  //       .catch(error => {
-  //         console.error('에러 발생', error);
-  //       });
-  //   }
-  // }, [user_id]);
-  
-
-  const mockSalesData = [
-    { title: '뉴발란스996',  price: 10000, tag: '1232', brand: '나이키', status: '새 상품', size: 'M', category: '상의', subcategory: '후드', user_id: 3, post_id: 3, liked_id: 5,img_urls:[['https://search.pstatic.net/sunny/?src=https%3A%2F%2Fedgio.clien.net%2FF01%2F10053782%2F2f1339f2052298.jpg%3Fscale%3Dwidth%255B740%255D%2Coptions%255Blimit%255D&type=sc960_832'],['https://search.pstatic.net/sunny/?src=https%3A%2F%2Fedgio.clien.net%2FF01%2F10053782%2F2f1339f2052298.jpg%3Fscale%3Dwidth%255B740%255D%2Coptions%255Blimit%255D&type=sc960_832']]},
-    { title: '뉴발란스996',  price: 10000, tag: '1232', brand: '나이키', status: '새 상품', size: 'L', category: '상의', subcategory: '후드', user_id: 3, post_id: 3, liked_id: 5,img_urls:[['https://search.pstatic.net/sunny/?src=https%3A%2F%2Fedgio.clien.net%2FF01%2F10053782%2F2f1339f2052298.jpg%3Fscale%3Dwidth%255B740%255D%2Coptions%255Blimit%255D&type=sc960_832'],['https://search.pstatic.net/sunny/?src=https%3A%2F%2Fedgio.clien.net%2FF01%2F10053782%2F2f1339f2052298.jpg%3Fscale%3Dwidth%255B740%255D%2Coptions%255Blimit%255D&type=sc960_832']]},
-    { title: '뉴발란스996',  price: 10000, tag: '1232', brand: '나이키', status: '새 상품', size: 'S', category: '아우터', subcategory: '후드', user_id: 3, post_id: 3, liked_id: 5,img_urls:[['https://search.pstatic.net/sunny/?src=https%3A%2F%2Fedgio.clien.net%2FF01%2F10053782%2F2f1339f2052298.jpg%3Fscale%3Dwidth%255B740%255D%2Coptions%255Blimit%255D&type=sc960_832'],['https://search.pstatic.net/sunny/?src=https%3A%2F%2Fedgio.clien.net%2FF01%2F10053782%2F2f1339f2052298.jpg%3Fscale%3Dwidth%255B740%255D%2Coptions%255Blimit%255D&type=sc960_832']]},
-    { title: '뉴발란스996',  price: 10000, tag: '1232', brand: '노스페이스', status: '적음', size: 'L', category: '상의', subcategory: '후드', user_id: 3, post_id: 3, liked_id: 5,img_urls:[['https://search.pstatic.net/sunny/?src=https%3A%2F%2Fedgio.clien.net%2FF01%2F10053782%2F2f1339f2052298.jpg%3Fscale%3Dwidth%255B740%255D%2Coptions%255Blimit%255D&type=sc960_832'],['https://search.pstatic.net/sunny/?src=https%3A%2F%2Fedgio.clien.net%2FF01%2F10053782%2F2f1339f2052298.jpg%3Fscale%3Dwidth%255B740%255D%2Coptions%255Blimit%255D&type=sc960_832']]},
-    { title: '뉴발란스996',  price: 10000, tag: '1232', brand: '트릴리온', status: '고장', size: 'XL', category: '바지', subcategory: '후드', user_id: 3, post_id: 3, liked_id: 5,img_urls:[['https://search.pstatic.net/sunny/?src=https%3A%2F%2Fedgio.clien.net%2FF01%2F10053782%2F2f1339f2052298.jpg%3Fscale%3Dwidth%255B740%255D%2Coptions%255Blimit%255D&type=sc960_832'],['https://search.pstatic.net/sunny/?src=https%3A%2F%2Fedgio.clien.net%2FF01%2F10053782%2F2f1339f2052298.jpg%3Fscale%3Dwidth%255B740%255D%2Coptions%255Blimit%255D&type=sc960_832']]},
-    { title: '뉴발란스996',  price: 10000, tag: '1232', brand: '노스페이스', status: '적음', size: 'L', category: '상의', subcategory: '후드', user_id: 3, post_id: 3, liked_id: 5,img_urls:[['https://search.pstatic.net/sunny/?src=https%3A%2F%2Fedgio.clien.net%2FF01%2F10053782%2F2f1339f2052298.jpg%3Fscale%3Dwidth%255B740%255D%2Coptions%255Blimit%255D&type=sc960_832'],['https://search.pstatic.net/sunny/?src=https%3A%2F%2Fedgio.clien.net%2FF01%2F10053782%2F2f1339f2052298.jpg%3Fscale%3Dwidth%255B740%255D%2Coptions%255Blimit%255D&type=sc960_832']]},
-    { title: '뉴발란스996',  price: 10000, tag: '1232', brand: '트릴리온', status: '적음', size: 'XL', category: '신발', subcategory: '후드', user_id: 3, post_id: 3, liked_id: 5,img_urls:[['https://search.pstatic.net/sunny/?src=https%3A%2F%2Fedgio.clien.net%2FF01%2F10053782%2F2f1339f2052298.jpg%3Fscale%3Dwidth%255B740%255D%2Coptions%255Blimit%255D&type=sc960_832'],['https://search.pstatic.net/sunny/?src=https%3A%2F%2Fedgio.clien.net%2FF01%2F10053782%2F2f1339f2052298.jpg%3Fscale%3Dwidth%255B740%255D%2Coptions%255Blimit%255D&type=sc960_832']]},
-    { title: '뉴발란스996',  price: 10000, tag: '1232', brand: '노스페이스', status: '고장', size: 'L', category: '상의', subcategory: '후드', user_id: 3, post_id: 3, liked_id: 5,img_urls:[['https://search.pstatic.net/sunny/?src=https%3A%2F%2Fedgio.clien.net%2FF01%2F10053782%2F2f1339f2052298.jpg%3Fscale%3Dwidth%255B740%255D%2Coptions%255Blimit%255D&type=sc960_832'],['https://search.pstatic.net/sunny/?src=https%3A%2F%2Fedgio.clien.net%2FF01%2F10053782%2F2f1339f2052298.jpg%3Fscale%3Dwidth%255B740%255D%2Coptions%255Blimit%255D&type=sc960_832']]},
-    { title: '뉴발란스996',  price: 10000, tag: '1232', brand: '트래블', status: '많음', size: 'L', category: '상의', subcategory: '후드', user_id: 3, post_id: 3, liked_id: 5,img_urls:[['https://search.pstatic.net/sunny/?src=https%3A%2F%2Fedgio.clien.net%2FF01%2F10053782%2F2f1339f2052298.jpg%3Fscale%3Dwidth%255B740%255D%2Coptions%255Blimit%255D&type=sc960_832'],['https://search.pstatic.net/sunny/?src=https%3A%2F%2Fedgio.clien.net%2FF01%2F10053782%2F2f1339f2052298.jpg%3Fscale%3Dwidth%255B740%255D%2Coptions%255Blimit%255D&type=sc960_832']]}
-
-  ];
-  setOriginalSalesData(mockSalesData); // 원본 데이터 설정
-  setSalesData(mockSalesData); // 임의의 데이터를 salesData 상태에 설정합니다.
-  }, [user_id]);
-  console.log(salesData);
+      axios.get('http://127.0.0.1:8080/post/getpost')
+        .then(response => {
+          const data = response.data.map(item => ({
+            title: item.title,
+            price: parseInt(item.price, 10),
+            brand: brands[item.brand_id] || "기타",
+            tag: item.tag,
+            used: item.used,
+            size: item.size,
+            category: categories[item.category_id],
+            subcategory: "기타", // Assuming there's no subcategory in API response
+            user_id: item.user_id,
+            post_id: item.post_id,
+            liked_id: item.liked_id
+          }));
+          setOriginalSalesData(data);
+          setSalesData(data);
+        })
+        .catch(error => {
+          console.error('에러 발생', error);
+        });
+    })
 
   const handleReset = () => {
     // 필터 초기화
@@ -207,13 +184,13 @@ const ProductListMain = ({ user_id }) => {
   };
   
   const [searchTerm, setSearchTerm] = useState("");
-  useEffect(() =>{
-    const filteredData = originalSalesData.filter((item)=>{
-      return item.title.toLowerCase().includes(searchTerm.toLowerCase());
+  useEffect(() => {
+    const filteredData = originalSalesData.filter((item) => {
+      const title = item.title || '';
+      return title.toLowerCase().includes(searchTerm.toLowerCase());
     });
     setSalesData(filteredData);
-
-  },[searchTerm,originalSalesData]);
+  }, [searchTerm, originalSalesData]);
   
   return (
     <div className="mainListWrapper">
@@ -307,13 +284,10 @@ const ProductListMain = ({ user_id }) => {
               status={sale.status}
               size={sale.size}
               brand={sale.brand}
-              img_urls={sale.img_urls[0]}
+              img_urls={sale.img_urls}
               />
           ))}
         </div>
-        
-          
-        
       </div>
     </div>
   );
