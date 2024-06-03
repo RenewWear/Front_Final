@@ -19,7 +19,9 @@ const Login = () => {
         };
         const response = await axios.post(`http://localhost:8080/auth/login`, requestBody);
         const userId = response.data.user_id;
+        const loginId = response.data.login_id;
         localStorage.setItem("user_id",userId);
+        localStorage.setItem("login_id",loginId);
         navigate("/");
     } catch (error) {
         alert("로그인 실패 : 없는 회원이거나 비밀번호가 틀렸습니다.");

@@ -89,6 +89,24 @@ const ProductListMain = () => {
     setSelectedState(event.target.value);
   };
 
+  const usedstates = {
+    "usage-new": "새 상품",
+    "usage-little": "적음",
+    "usage-many": "많음",
+    "usage-broken": "고장"
+  };
+
+  const size = {
+    "size_XS":"XS",
+    "size_S":"S",
+    "size_M":"M",
+    "size_L":"L",
+    "size_XL":"XL",
+    "size_2XL":"2XL",
+    "size_3XL":"3XL",
+    "size_Free":"Free"
+  };
+
 /// 가격 함수
   const prices = {
     "1": "~10,000원",
@@ -114,11 +132,9 @@ const ProductListMain = () => {
             price: parseInt(item.price, 10),
             brand: brands[item.brand],
             tag: item.tag,
-            used: item.used,
-            size: item.size,
+            used: usedstates[item.used],
+            size: size[item.size],
             category: item.category,
-            //category : "\uc2e0\ubc1c,\ubaa8\uce74\uc2e0/\ubcf4\ud2b8",
-            //subcategory: "기타", // Assuming there's no subcategory in API response
             user_id: item.user_id,
             post_id: item.post_id,
             image_urls: `data:image/png;base64,${item.image_blob}`
@@ -287,6 +303,7 @@ const ProductListMain = () => {
               size={sale.size}
               brand={sale.brand}
               img_urls={sale.image_urls}
+              post_id = {sale.post_id}
               />
           ))}
         </div>

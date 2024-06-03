@@ -17,7 +17,7 @@ const UpperSell = ({title, price, size, used, brand_id, category_id,img_urls}) =
     <div className="frame-container">
       <div className="frame-div">
         <div className="wrapper1">
-        <img className="product-image" src={img_urls[currentIndex]} alt='Product' />
+        <img className="product-image" src={img_urls} alt='Product' />
         <div className="button-container">
         <button className="button-prev" onClick={handlePrev}>Previous</button>
         <button className="button-next" onClick={handleNext}>Next</button>

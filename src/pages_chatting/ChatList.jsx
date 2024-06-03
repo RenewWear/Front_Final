@@ -4,6 +4,7 @@ import './ChatList.css';
 import ChattingRequest from './ChattingRequest';
 import ChattingReceive from './ChattingReceive';
 import HeaderComponent from '../components_header/HeaderComponent';
+import { useLocation } from 'react-router-dom';
 
 const ChatList = async (user_id) => {
   try {
@@ -19,6 +20,8 @@ const ChatList = async (user_id) => {
 const ChatListComponent = () => {
   const [chatList, setChatList] = useState([]);
   const user_id = localStorage.getItem('user_id');
+  // const location = useLocation();
+  // const postId = location.state.postId;
   const [selectedRoomId, setSelectedRoomId] = useState(null);
   const [selectedChatForRequest, setSelectedChatForRequest] = useState(null);
 

@@ -6,10 +6,10 @@ const ProductCardMain = ({ title, price, tag, category, used, brand, status, pos
   const navigate = useNavigate();
 
   const imgClick = () => {
-      navigate(`/sell/${post_id}`);
-     alert('해당 판매 페이지 이동')
+    navigate(`/sell`, { state: { postId: post_id } });
   };
-  const categorySplit = category.split(',');
+
+  const categorySplit = category ? category.split(',') : [];
   // 첫 번째 요소는 category로 사용
   const cat = categorySplit[0];
   // 나머지 요소들은 subcategory로 조합

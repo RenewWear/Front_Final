@@ -4,35 +4,34 @@ import "./SalesLayoutComponent.css"
 import axios from "axios";
 import SalesPost from "./SalesPost";
 
-const SalesLayoutComponent = ({ user_id }) => {
+const SalesLayoutComponent = () => {
   const [salesData, setSalesData] = useState([]);
+  const user_id = localStorage.getItem("user_id");
 
-
-  useEffect( () => {
-  //   if (user_id) {
-  //     axios.get(`127.0.0.1:8080/posts/sales/{user_id}`).then(error => {
-  //       setSalesData(response.data);
-  //     })
-  //     .catch(error => {
-  //       console.error('에러 발생', error);
-  //     });
-  //   }
-  // }, [user_id]);
-
-
-  const mockSalesData = [
-    { title: '뉴발란스996',  price: 10000, created_at: '2024-05-24', status: '판매 중', user_id: 3, post_id: 3, liked_id: 5, image_url: null},
-    { title: 'ㅁㄴㅇ', price: 10000, created_at: '2024-05-25', status: '판매 중', user_id: 3, post_id: 3 , liked_id: 5, image_url: null}, 
-    { title: 'ㄴㅇ', price: 10000, created_at: '2024-05-26', status: '판매 중', user_id: 3, post_id: 3 , liked_id: 5, image_url: null},
-    { title: 'ㄴㅇ', price: 10000, created_at: '2024-05-26', status: '판매 중', user_id: 3, post_id: 3 , liked_id: 5, image_url: null}  
-  ];
-  setSalesData(mockSalesData); // 임의의 데이터를 salesData 상태에 설정합니다.
-  }, [user_id]);
-
-
-  const handleClick = (image_url) => {
-    alert("post로 이동합니다", image_url);
-  };
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(`http://127.0.0.1:8080/mypage/sales/${user_id}`);
+        const data = response.data.map(item => ({
+          title: item.title,
+          post_id: item.post_id,
+          price: parseInt(item.price, 10),
+          created_at: new Date(item.created_at).toLocaleDateString('ko-KR', {
+            year: 'numeric',
+            month: '2-digit',
+            day: '2-digit'
+          }).replace(/\. /g, '-').replace(/\./g, ''),
+          status: item.status,
+          image_url: `data:image/png;base64,${item.image_blob}`
+        }));
+        setSalesData(data);
+      } catch (error) {
+        console.error('에러 발생', error);
+      }
+    };
+  
+    fetchData();
+  }, [user_id]); // 의존성 배열에 user_id를 추가해야 합니다.
 
   const handleEdit = (post_id) => {
     navigate(`/editpost/${post_id}`); //게시글 수정 화면으로 이동
@@ -73,7 +72,8 @@ const SalesLayoutComponent = ({ user_id }) => {
             title={sale.title}
             created_at={sale.created_at}
             status={sale.status}
-            onClick={() => handleClick(sale.image_url)}
+            image_url={sale.image_url}
+            post_id={sale.post_id}
           />
         ))}
         
