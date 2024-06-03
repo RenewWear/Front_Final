@@ -16,6 +16,7 @@ const FooterUpload = ({
   selectUsage,
   selectBrands,
   body,
+  tag,
 
 }) => {
   const navigate = useNavigate(); 
@@ -36,7 +37,7 @@ const FooterUpload = ({
     const requestBody = {
       "title":title,
       "user_id": localStorage.getItem("user_id"),
-      "tag": "태그",
+      "tag": tag,
       "category": category,
       "price": price,
       "location": location,
@@ -59,7 +60,7 @@ const FooterUpload = ({
       if (response.status === 200) {
         console.log('Success:', response.data);
         alert("등록 완료! 메인페이지로 이동 ");
-        navigate("/sell");
+        navigate("/");
         // 성공적으로 요청이 처리된 경우 추가 작업 수행
       } else {
         console.error('Error:', response.statusText);

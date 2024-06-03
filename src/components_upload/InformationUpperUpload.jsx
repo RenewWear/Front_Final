@@ -13,15 +13,6 @@ const InformationUpperUpload = ({
   delivery, setDelivery,
   category, setCategory 
 }) => {
-  // useLocation 훅을 사용하여 navigate로부터 받은 state에 접근
-  // const { state } = useLocation();
-  // const { postId } = state || {}; // state가 없는 경우를 대비하여 기본값 설정
-  // const [title, setTitle] = useState(""); //제목
-  // const [price, setPrice] = useState(""); //가격
-  // const [location, setLocation] = useState(""); //거래 희망 장소 
-  // const [delivery, setDelivery] = useState(""); //택배비 
-  // const [category, setCategory] = useState("");
-  // const [tag, setTag] = userState(""); // 태그
   const [selectedCategory, setSelectedCategory] = useState(""); //상위 카테고리 
   const [selectedSubCategory, setSelectedSubCategory] = useState(""); //서브 카테고리 
   const [selectedUpperCategory, setSelectedUpperCategory] = useState("");
@@ -131,6 +122,7 @@ const InformationUpperUpload = ({
     console.log("택배비 : ",delivery);
   }
 
+  //----태그----- 
   const handleTagChange = (e) => {
     setTag(e.target.value);
     console.log("태그 : ",tag);

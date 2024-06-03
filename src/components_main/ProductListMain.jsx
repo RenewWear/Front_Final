@@ -121,12 +121,8 @@ const ProductListMain = () => {
             //subcategory: "기타", // Assuming there's no subcategory in API response
             user_id: item.user_id,
             post_id: item.post_id,
-            liked_id: item.liked_id,
-            img_urls: item.img_urls,
-          }
-          ));
-
-          
+            image_urls: `data:image/png;base64,${item.image_blob}`
+          }));
           setOriginalSalesData(data);
           setSalesData(data);
         })
@@ -290,7 +286,7 @@ const ProductListMain = () => {
               status={sale.status}
               size={sale.size}
               brand={sale.brand}
-              img_urls={sale.img_urls}
+              img_urls={sale.image_urls}
               />
           ))}
         </div>
