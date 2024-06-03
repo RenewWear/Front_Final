@@ -20,6 +20,7 @@ const Upload = () => {
   const [selectUsage, setSelectUsage] = useState('usage-little');
   const [selectedBrands, setSelectedBrands] = useState("");
   const [body, setBody] = useState("");
+  const [tag, setTag] = useState("");
 
   return (
     <div>
@@ -37,6 +38,7 @@ const Upload = () => {
             location={location} setLocation={setLocation}
             delivery={delivery} setDelivery={setDelivery}
             category={category} setCategory={setCategory}
+            tag={tag} setTag={setTag}
         />
           <InformationLowerUpload 
             postId={postId}
@@ -59,6 +61,7 @@ const Upload = () => {
         selectUsage={selectUsage}
         selectBrands={selectedBrands}
         body = {body}
+        tag = {tag}
       />
     </div>
   );
