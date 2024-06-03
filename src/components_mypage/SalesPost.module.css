@@ -15,6 +15,11 @@
   transform: scale(1.1); /* 이미지를 1.1배 확대합니다. */
   transition: transform 0.3s ease; /* 변환을 부드럽게 만듭니다. */
 }
+.fixedSizeImage{
+  width:120px;
+  height:120px;
+  object-fit: cover;
+}
 .bMy,
 .divMy {
   position: relative;

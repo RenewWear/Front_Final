@@ -35,6 +35,7 @@
   display: flex;
   align-items: center;
   width: 121px;
+  font-size: 25px;
 }
 .line-group {
   width: 788px;
@@ -380,7 +381,7 @@
   }
 }
 .product-information {
-  font-size: 16px; /* 폰트 크기 설정 */
+  font-size: 20px; /* 폰트 크기 설정 */
   font-weight: bold; /* 폰트 굵기 설정 */
   color: #333; /* 폰트 색상 설정 */
   margin-top: 10px; /* 위쪽 여백 설정 */

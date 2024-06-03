@@ -2,31 +2,37 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import PostFavorite from "./PostFavorite";
 import styles from "./FavLayoutComponent.module.css"
+import axios from "axios";
 
-const FavLayoutComponent = ({ user_id }) => {
+const FavLayoutComponent = () => {
 
   const [postDetails, setPostDetails] = useState([]);
+  const user_id = localStorage.getItem("user_id");
 
-  useEffect ( () => {
-    //   if (user_id) {
-    //     axios.get(`127.0.0.1:8080/posts/sales/{user_id}`).then(error => {
-    //       setSalesData(response.data);
-    //     })
-    //     .catch(error => {
-    //       console.error('에러 발생', error);
-    //     });
-    //   }
-    // }, [user_id]);
-
-    const mockPostdetails = [
-      { title: '뉴발란스996',  price: 10000, created_at: '2024-05-24', status: '판매 중', user_id: 3, post_id: 3, liked_id: 5, image_url: null},
-    { title: 'ㅁㄴㅇ', price: 10000, created_at: '2024-05-25', status: '판매 중', user_id: 3, post_id: 3 , liked_id: 5, image_url: null}, 
-    { title: 'ㄴㅇ', price: 10000, created_at: '2024-05-26', status: '판매 중', user_id: 3, post_id: 3 , liked_id: 5, image_url: null},
-    { title: 'ㄴㅇ', price: 10000, created_at: '2024-05-26', status: '판매 중', user_id: 3, post_id: 3 , liked_id: 5, image_url: null}  
-  ];
-
-    setPostDetails(mockPostdetails);
-  }, [user_id]);
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(`http://127.0.0.1:8080/mypage/liked/${user_id}`);
+        const data = response.data.map(item => ({
+          title: item.title,
+          price: parseInt(item.price, 10),
+          post_id: item.post_id,
+          created_at: new Date(item.created_at).toLocaleDateString('ko-KR', {
+            year: 'numeric',
+            month: '2-digit',
+            day: '2-digit'
+          }).replace(/\. /g, '-').replace(/\./g, ''),
+          status: item.status,
+          image_url: `data:image/png;base64,${item.image_blob}`
+        }));
+        setPostDetails(data);
+      } catch (error) {
+        console.error('에러 발생', error);
+      }
+    };
+  
+    fetchData();
+  }, [user_id]); 
 
   const handleClick = (image_url) => {
     alert("post로 이동합니다", image_url);
@@ -48,7 +54,9 @@ const FavLayoutComponent = ({ user_id }) => {
                   title={fav.title}
                   status={fav.status}
                   created_at={fav.created_at}
-                  onClick={()=>handleClick(fav.image_url)}
+                  image_url={fav.image_url}
+                  post_id = {fav.post_id}
+                  // onClick={()=>handleClick(fav.image_url)}
                 />
                 ))}
     </div>

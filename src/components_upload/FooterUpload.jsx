@@ -20,17 +20,6 @@ const FooterUpload = ({
 
 }) => {
   const navigate = useNavigate(); 
-  console.log("footerUpload.jsx - postId :",postId);
-  console.log("footerUpload.jsx - title :",title);
-  console.log("footerUpload.jsx - price.jsx - price :",price);
-  console.log("footerUpload.jsx - location :",location);
-  console.log("footerUpload.jsx - delivery :",delivery);
-  console.log("footerUpload.jsx - category :",category);
-  console.log("footerUpload.jsx - trade :",selectTrade);
-  console.log("footerUpload.jsx - size :",selectSize);
-  console.log("footerUpload.jsx - usage :",selectUsage);
-  console.log("footerUpload.jsx - brand :",selectBrands);
-  console.log("footerUpload.jsx - body :",body);
 
   const handleClickUpload = async() => {
 
