@@ -105,23 +105,28 @@ const ProductListMain = () => {
 
   const [salesData, setSalesData] = useState([]);
   const [originalSalesData, setOriginalSalesData] = useState([]);
-
+  const baseURL = 'http://127.0.0.1:8080/';
   useEffect(() => {
       axios.get('http://127.0.0.1:8080/post/getpost')
         .then(response => {
           const data = response.data.map(item => ({
             title: item.title,
             price: parseInt(item.price, 10),
-            brand: brands[item.brand_id] || "기타",
+            brand: brands[item.brand],
             tag: item.tag,
             used: item.used,
             size: item.size,
-            category: categories[item.category_id],
-            subcategory: "기타", // Assuming there's no subcategory in API response
+            category: item.category,
+            //category : "\uc2e0\ubc1c,\ubaa8\uce74\uc2e0/\ubcf4\ud2b8",
+            //subcategory: "기타", // Assuming there's no subcategory in API response
             user_id: item.user_id,
             post_id: item.post_id,
-            liked_id: item.liked_id
-          }));
+            liked_id: item.liked_id,
+            img_urls: item.img_urls,
+          }
+          ));
+
+          
           setOriginalSalesData(data);
           setSalesData(data);
         })
@@ -182,7 +187,7 @@ const ProductListMain = () => {
   
     setSalesData(filteredData); // 검색 결과를 상태로 업데이트
   };
-  
+
   const [searchTerm, setSearchTerm] = useState("");
   useEffect(() => {
     const filteredData = originalSalesData.filter((item) => {
@@ -280,6 +285,7 @@ const ProductListMain = () => {
               tag={sale.tag}
               title={sale.title}
               category={sale.category}
+              used={sale.used}
               subcategory={sale.subcategory}
               status={sale.status}
               size={sale.size}
