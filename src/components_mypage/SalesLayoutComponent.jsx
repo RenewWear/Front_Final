@@ -37,22 +37,6 @@ const SalesLayoutComponent = () => {
     navigate(`/editpost/${post_id}`); //게시글 수정 화면으로 이동
   };
 
-  const handleDelete = (post_id) => {
-    axios.delete(`http://127.0.0.1:8080/post/deletepost/${post_id}`)
-      .then(response => {
-        if (response.status === 200) {
-          alert("게시글이 삭제되었습니다.");
-          setSalesData(salesData.filter(post => post.post_id !== postId));
-        } else {
-          alert("게시글 삭제 실패");
-        }
-      })
-      .catch(error => {
-        console.error('삭제 에러', error);
-        alert("서버 오류로 게시글 삭제 실패");
-      });
-  };
-
 
   console.log(salesData);
 
